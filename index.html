@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <title>РАЗРЯД - системы счисления</title>
+    <link rel="icon" href="assets/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/tumblers.css">
+</head>
+
+<body>
+
+    <canvas id="canvas-bg"></canvas>
+
+    <div class="game-container" id="mainContainer">
+
+        <div class="scanlines"></div>
+
+        <header class="header">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <h1 id="logo-text" class="logo-text">ТРЕНАЖЕР СИСТЕМ СЧИСЛЕНИЯ</h1>
+            </div>
+            <div class="header-info">
+                <div id="diffic-box">
+                    <div id="diffic-dot" class="status-dot easy"></div>
+                    <div class="mode-display">РЕЖИМ: <span class="easy" id="difficulty">ЛЕГКО</span></div>
+                </div>
+                <div style="display: none;" class="score-display">РЕКОРД: <span id="record-val">????</span></div>
+            </div>
+        </header>
+
+        <main class="content-area" id="gameContent">
+
+            <div class="start-overlay" id="startScreen">
+                <div class="start-content">
+                    <h2 class="start-title"><span>< РАЗРЯД ></span></h2>
+                    <p class="start-subtitle typing-cursor" id="subtitleText">Нажмите "Начать"<span id="tri-tochki"></span></p>
+
+                    <div class="info-box">
+                        <p class="menu-ss sel" id="menu-ss-2"><span class="highlight">></span> Двоичная система</p>
+                        <p class="menu-ss" id="menu-ss-8"><span class="highlight">></span> Восьмеричная</p>
+                        <p class="menu-ss" id="menu-ss-16"><span class="highlight">></span> Шестнадцатеричная</p>
+                    </div>
+
+                    <button class="btn-cyber" id="startBtn"><p>НАЧАТЬ</p></button>
+                </div>
+            </div>
+
+            <div id="activeGameArea" class="hidden">
+                <div id="game-placehold" class="game-placehold">
+                    <h3>Выберите режим...</h3>
+                    <p id="game-placehold-p">Двоичная система счисления</p>
+                    <div class="number-blocks">
+                        <div id="cosmo-card" class="number-block cyan">Космические Баталии</div>
+                        <div id="tumbler-card" class="number-block purple">Двоичные Тумблеры</div>
+                        <div id="color-card" class="number-block green">Игра Цветов</div>
+                    </div>
+                    <button class="back-link" onclick="resetView()">В главное меню</button>
+                </div>
+
+                <div class="game-block" id="cosmo-game-block">
+
+                </div>
+
+                <div class="game-block" id="tumbler-game-block">
+                    <div class="tumb-header">
+                        <div class="tumb-block">
+                            <h2 id="tumb-text">0</h2>
+                        </div>
+                        <div class="tumb-helps">
+                            <div id="tumb-reload"></div>
+                            <div id="tumb-help"></div>
+                        </div>
+                    </div>
+                    <div class="tumb-game-area">
+                        <div class="tumb-lamps">
+                            <div class="tumb-lamp-box off" id="tumb-lamp-box-1">
+                                <div class="tumb-lamp"></div>
+                                <div class="tumb-lever"></div>
+                                <span class="tumb-lamp-number-0">0</span>
+                                <span class="tumb-lamp-number-1">1</span>
+                            </div>
+
+                            <div class="tumb-lamp-box off" id="tumb-lamp-box-2">
+                                <div class="tumb-lamp"></div>
+                                <div class="tumb-lever"></div>
+                                <span class="tumb-lamp-number-0">0</span>
+                                <span class="tumb-lamp-number-1">1</span>
+                            </div>
+
+                            <div class="tumb-lamp-box off" id="tumb-lamp-box-3">
+                                <div class="tumb-lamp"></div>
+                                <div class="tumb-lever"></div>
+                                <span class="tumb-lamp-number-0">0</span>
+                                <span class="tumb-lamp-number-1">1</span>
+                            </div>
+
+                            <div class="tumb-lamp-box off" id="tumb-lamp-box-4">
+                                <div class="tumb-lamp"></div>
+                                <div class="tumb-lever"></div>
+                                <span class="tumb-lamp-number-0">0</span>
+                                <span class="tumb-lamp-number-1">1</span>
+                            </div>
+
+                            <div class="tumb-lamp-box off" id="tumb-lamp-box-5">
+                                <div class="tumb-lamp"></div>
+                                <div class="tumb-lever"></div>
+                                <span class="tumb-lamp-number-0">0</span>
+                                <span class="tumb-lamp-number-1">1</span>
+                            </div>
+                        </div>
+
+                        <div class="tumb-footer">
+                            <h2 class="tumb-notes">
+                                <span id="tumb-note">0 + 0 + 0 = </span>
+                                <span id="tumb-ans">0</span>
+                            </h2>
+
+                            <button disabled onclick="tumbReload()" id="tumb-continue">ПРОДОЛЖИТЬ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="game-block" id="color-game-block">
+                    <div class="hex-header">
+                        <div class="hex-block">
+                            <div id="hex-color"></div>
+                            <h2 class="hex-text">#<span id="hex-r">FF</span><span id="hex-g">FF</span><span id="hex-b">FF</span></h2>
+                        </div>
+                        <div class="hex-helps">
+                            <div id="hex-reload"></div>
+                            <div id="hex-help"></div>
+                        </div>
+                    </div>
+                    <div class="hex-game-area">
+                        <div class="rgb-inputs">
+                            <div class="rgb-input-container">
+                                <span class="rgb-input-help r">R</span>
+                                <input autocomplete="off" id="rgb-input-r" class="rgb-input" type="text" maxlength="3" placeholder="0">
+                            </div>
+                            <div class="rgb-input-container">
+                                <span class="rgb-input-help g">G</span>
+                                <input autocomplete="off" id="rgb-input-g" class="rgb-input" type="text" maxlength="3" placeholder="0">
+                            </div>
+                            <div class="rgb-input-container">
+                                <span class="rgb-input-help b">B</span>
+                                <input autocomplete="off" id="rgb-input-b" class="rgb-input" type="text" maxlength="3" placeholder="0">
+                            </div>
+                            <button id="rgb-check" onclick="checkColorAnswer()">ПРОВЕРИТЬ ></button>
+                        </div>
+                        <div id="rgb-color-preview"></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div>Автор работы: <span>Макаров Пётр</span></div>
+            <div class="footer-stats">
+                <span>2025 - 2026</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/cosmo.js"></script>
+    <script src="js/color.js"></script>
+    <script src="js/tumbler.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+.tumb-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin-top: 1rem;
+    /* background: #00bbff; */
+}
+
+.tumb-helps {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#tumb-reload {
+    aspect-ratio: 1/1;
+    height: 4rem;
+    opacity: 0.7;
+    background: url('/assets/reload.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+#tumb-reload:hover {
+    opacity: 1;
+}
+
+#tumb-help {
+    aspect-ratio: 1/1;
+    height: 4rem;
+    opacity: 0.7;
+    background: url('/assets/help.png');
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+#tumb-help:hover {
+    opacity: 1;
+}
+
+.tumb-block {
+    background: #ffffff8e;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#tumb-text {
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+    color: #000;
+    text-align: center;
+    min-width: 4rem;
+    padding-left: 0.5rem;
+}
+
+.tumb-game-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 1rem 0;
+    margin-top: 3rem;
+}
+
+.tumb-lamps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.tumb-lamp-box {
+    min-width: 5.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tumb-lamp {
+    margin-right: 2.1rem;
+    aspect-ratio: 1/1;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.tumb-lamp-box.on .tumb-lamp {
+    border: solid 0.2rem #1d9c00;
+    background: #22b800;
+    -webkit-box-shadow: 0px 0px 20px 7px #22b80093;
+    -moz-box-shadow: 0px 0px 20px 7px #22b80093;
+    box-shadow: 0px 0px 20px 7px #22b80093;
+}
+
+.tumb-lamp-box.off .tumb-lamp {
+    border: solid 0.2rem #9e0000;
+    background: #b80000;
+    -webkit-box-shadow: 0px 0px 20px 7px #ff46468b;
+    -moz-box-shadow: 0px 0px 20px 7px #ff46468b;
+    box-shadow: 0px 0px 20px 7px #ff46468b;
+}
+
+.tumb-lamp-number-0,
+.tumb-lamp-number-1 {
+    margin-right: 2.1rem;
+    color: #e9ffd5;
+    font-size: 3rem;
+    padding: 0 0.5rem;
+    font-weight: 800;
+    border-radius: 50%;
+    -webkit-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+    -moz-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+}
+
+.tumb-lamp-box.on .tumb-lamp-number-1,
+.tumb-lamp-box.off .tumb-lamp-number-0 {
+    display: inline-block;
+}
+
+.tumb-lamp-box.on .tumb-lamp-number-0,
+.tumb-lamp-box.off .tumb-lamp-number-1 {
+    display: none;
+}
+
+.tumb-lever {
+    aspect-ratio: 1/1;
+    height: 5rem;
+    background: url('/assets/lever.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tumb-lamp-box.on .tumb-lever {
+    transform: scaleY(-1);
+}
+
+.tumb-notes {
+    font-size: 2rem;
+    -webkit-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+    -moz-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+}
+
+#tumb-ans {
+    color: rgb(246, 224, 81);
+}
+
+#tumb-continue {
+    margin-top: 1rem;
+    outline: none;
+    border: solid 0.1rem #000;
+    border-radius: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: #45fe488b;
+    font-size: 1.5rem;
+    padding: 0.5rem 3rem;
+    cursor: pointer;
+
+    transition: border-radius 1s;
+}
+#tumb-continue:hover {
+    border-radius: 1rem;
+    transition: border-radius 0.3s;
+}
+#tumb-continue:disabled {
+    transition: none;
+    pointer-events: none;
+    background: #b9c7c96f;
+}
