@@ -19,7 +19,7 @@
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
-    background: url('/assets/reload.png');
+    background: url('../assets/reload.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -32,7 +32,7 @@
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
-    background: url('/assets/help.png');
+    background: url('../assets/help.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -137,7 +137,7 @@
 .tumb-lever {
     aspect-ratio: 1/1;
     height: 5rem;
-    background: url('/assets/lever.png');
+    background: url('../assets/lever.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

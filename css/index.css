@@ -10,8 +10,8 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: #050510;
     color: #e2e8f0;
-    overflow: hidden;
-    height: 100vh;
+    /* overflow: hidden; */
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,20 +29,21 @@ body {
 
 .game-container {
     position: relative;
-    width: 90vw;
-    max-width: 63rem;
-    height: 85vh;
-    background: #0a0a14d9;
+    width: 63rem;
+    max-width: 200vw;
+    min-height: 85vh;
+    background: #0a0a14a4;
     border: 0.15rem solid #00f3ff4d;
     border-radius: 1rem;
     box-shadow:
         0 0 1.25rem #00f3ff1a,
         inset 0 0 2.5rem #00000080;
-    backdrop-filter: blur(0.75rem);
+    backdrop-filter: blur(0.7rem);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .scanlines {
@@ -61,7 +62,6 @@ body {
     z-index: 10;
     opacity: 0.3;
 }
-
 
 .header {
     padding: 1.5rem 2rem;
@@ -179,9 +179,9 @@ body {
 }
 
 .content-area {
-    flex: 1;
+    /* flex: 1; */
     padding: 2rem;
-    overflow-y: auto;
+    /* overflow-y: hidden; */
     position: relative;
 }
 
@@ -204,9 +204,9 @@ body {
 }
 
 .start-overlay {
-    position: absolute;
+    /* position: absolute; */
     inset: 0;
-    background: #050510f2;
+    /* background: #050510f2; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -285,7 +285,6 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
     transition: all 0.3s;
     text-transform: uppercase;
     letter-spacing: 0.15rem;
@@ -309,7 +308,7 @@ body {
 
 #activeGameArea {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -481,7 +480,7 @@ body {
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
-    background: url('/assets/reload.png');
+    background: url('../assets/reload.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -494,7 +493,7 @@ body {
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
-    background: url('/assets/help.png');
+    background: url('../assets/help.png');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -674,6 +673,24 @@ body {
     border-radius: 1.5rem;
     transition: border-radius 0.3s;
 }
+
+#color-game-block {
+    padding: 0 0 3rem 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

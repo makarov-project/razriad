@@ -1,5 +1,5 @@
 let isGameOn = false;
-let game_mode = "easy";
+let game_mode = "normal";
 let tri_tochki_cont = "";
 let draw_inter;
 let dif_but = document.getElementById('difficulty');
@@ -160,3 +160,12 @@ function setRainFPS(n, shouldFreeze = false) {
     draw_inter = setInterval(draw, n);
     wasFreezedBg = shouldFreeze;
 }
+
+const observer = new ResizeObserver(() => {
+    if (body.scrollHeight > window.innerHeight) {
+        body.style.overflowY = 'auto';
+    } else {
+        body.style.overflowY = 'hidden';
+    }
+});
+observer.observe(document.body);
