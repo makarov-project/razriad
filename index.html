@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=0.7">
@@ -8,9 +9,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tumblers.css">
+    <link rel="stylesheet" href="css/cosmo.css">
 </head>
 
-<body id="body">
+<body>
 
     <canvas id="canvas-bg"></canvas>
 
@@ -24,8 +26,8 @@
             </div>
             <div class="header-info">
                 <div id="diffic-box">
-                    <div id="diffic-dot" class="status-dot normal"></div>
-                    <div class="mode-display">РЕЖИМ: <span class="normal" id="difficulty">НОРМАЛЬНО</span></div>
+                    <div id="diffic-dot" class="status-dot easy"></div>
+                    <div class="mode-display">РЕЖИМ: <span class="easy" id="difficulty">ЛЕГКО</span></div>
                 </div>
                 <div style="display: none;" class="score-display">РЕКОРД: <span id="record-val">????</span></div>
             </div>
@@ -61,7 +63,22 @@
                 </div>
 
                 <div class="game-block" id="cosmo-game-block">
+                    <div class="cosmo-header">
+                        <div class="cosmo-block">
+                            <h2 class="cosmo-text">СС: <span id="cosmo-text">2</span></h2>
+                        </div>
+                        <div class="cosmo-helps">
+                            <div id="cosmo-reload"></div>
+                            <div id="cosmo-help"></div>
+                        </div>
+                    </div>
 
+                    <div class="cosmo-game-area">
+                        <div class="ship-column">
+                            <div class="ship"></div>
+                            <h2 class="ship-tex"><span class="green">...</span></h2>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="game-block" id="tumbler-game-block">
@@ -74,6 +91,7 @@
                             <div id="tumb-help"></div>
                         </div>
                     </div>
+
                     <div class="tumb-game-area">
                         <div class="tumb-lamps">
                             <div class="tumb-lamp-box off" id="tumb-lamp-box-1">

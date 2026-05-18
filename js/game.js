@@ -70,11 +70,9 @@ function resetView() {
     cosmo_game_block.style.display = 'none';
     tumbler_game_block.style.display = 'none';
     color_game_block.style.display = 'none';
-    setTimeout(() => {
-        cosmo_game_block.style.display = 'block';
-        cosmo_game_block.style.display = 'block';
-        cosmo_game_block.style.display = 'block';
-    }, 500);
+    // setTimeout(() => {
+    //     cosmo_game_block.style.display = 'block';
+    // }, 500);
     game_placehold.style.display = 'block';
     game_placehold.classList.remove('hid');
     dific_dot.classList.remove('disab');

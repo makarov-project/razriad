@@ -1,4 +1,4 @@
-.cosmo-header {
+.tumb-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,13 +9,13 @@
     /* background: #00bbff; */
 }
 
-.cosmo-helps {
+.tumb-helps {
     display: flex;
     align-items: center;
     gap: 2rem;
 }
 
-#cosmo-reload {
+#tumb-reload {
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
@@ -24,11 +24,11 @@
     background-position: center;
     cursor: pointer;
 }
-#cosmo-reload:hover {
+#tumb-reload:hover {
     opacity: 1;
 }
 
-#cosmo-help {
+#tumb-help {
     aspect-ratio: 1/1;
     height: 4rem;
     opacity: 0.7;
@@ -37,11 +37,11 @@
     background-position: center;
     cursor: pointer;
 }
-#cosmo-help:hover {
+#tumb-help:hover {
     opacity: 1;
 }
 
-.cosmo-block {
+.tumb-block {
     background: #ffffff8e;
     padding: 1rem;
     border-radius: 1rem;
@@ -50,7 +50,7 @@
     gap: 1rem;
 }
 
-.cosmo-text {
+#tumb-text {
     letter-spacing: 0.5rem;
     font-size: 3rem;
     color: #000;
@@ -59,7 +59,7 @@
     padding-left: 0.5rem;
 }
 
-.cosmo-game-area {
+.tumb-game-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,14 +71,14 @@
     margin-top: 3rem;
 }
 
-.cosmo-lamps {
+.tumb-lamps {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 3rem;
 }
 
-.cosmo-lamp-box {
+.tumb-lamp-box {
     min-width: 5.5rem;
     cursor: pointer;
     display: flex;
@@ -88,14 +88,14 @@
     gap: 1rem;
 }
 
-.cosmo-lamp {
+.tumb-lamp {
     margin-right: 2.1rem;
     aspect-ratio: 1/1;
     height: 2rem;
     border-radius: 50%;
 }
 
-.cosmo-lamp-box.on .cosmo-lamp {
+.tumb-lamp-box.on .tumb-lamp {
     border: solid 0.2rem #1d9c00;
     background: #22b800;
     -webkit-box-shadow: 0px 0px 20px 7px #22b80093;
@@ -103,7 +103,7 @@
     box-shadow: 0px 0px 20px 7px #22b80093;
 }
 
-.cosmo-lamp-box.off .cosmo-lamp {
+.tumb-lamp-box.off .tumb-lamp {
     border: solid 0.2rem #9e0000;
     background: #b80000;
     -webkit-box-shadow: 0px 0px 20px 7px #ff46468b;
@@ -111,8 +111,8 @@
     box-shadow: 0px 0px 20px 7px #ff46468b;
 }
 
-.cosmo-lamp-number-0,
-.cosmo-lamp-number-1 {
+.tumb-lamp-number-0,
+.tumb-lamp-number-1 {
     margin-right: 2.1rem;
     color: #e9ffd5;
     font-size: 3rem;
@@ -124,17 +124,17 @@
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
-.cosmo-lamp-box.on .cosmo-lamp-number-1,
-.cosmo-lamp-box.off .cosmo-lamp-number-0 {
+.tumb-lamp-box.on .tumb-lamp-number-1,
+.tumb-lamp-box.off .tumb-lamp-number-0 {
     display: inline-block;
 }
 
-.cosmo-lamp-box.on .cosmo-lamp-number-0,
-.cosmo-lamp-box.off .cosmo-lamp-number-1 {
+.tumb-lamp-box.on .tumb-lamp-number-0,
+.tumb-lamp-box.off .tumb-lamp-number-1 {
     display: none;
 }
 
-.cosmo-lever {
+.tumb-lever {
     aspect-ratio: 1/1;
     height: 5rem;
     background: url('/assets/lever.png');
@@ -143,22 +143,22 @@
     background-size: cover;
 }
 
-.cosmo-lamp-box.on .cosmo-lever {
+.tumb-lamp-box.on .tumb-lever {
     transform: scaleY(-1);
 }
 
-.cosmo-notes {
+.tumb-notes {
     font-size: 2rem;
     -webkit-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
     -moz-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
     text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 
-#cosmo-ans {
+#tumb-ans {
     color: rgb(246, 224, 81);
 }
 
-#cosmo-continue {
+#tumb-continue {
     margin-top: 1rem;
     outline: none;
     border: solid 0.1rem #000;
@@ -171,12 +171,48 @@
 
     transition: border-radius 1s;
 }
-#cosmo-continue:hover {
+#tumb-continue:hover {
     border-radius: 1rem;
     transition: border-radius 0.3s;
 }
-#cosmo-continue:disabled {
+#tumb-continue:disabled {
     transition: none;
     pointer-events: none;
     background: #b9c7c96f;
+}
+
+.ship-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 40vh;
+}
+
+.ship {
+    background: url('/assets/ship.png');
+    aspect-ratio: 1/1;
+    height: 10rem;
+    width: 10rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.ship-text {
+    font-size: 4rem;
+    margin-bottom: 7rem;
+
+    color: #df0000;
+    -webkit-text-shadow: 0px 0px 4px #1d1d1d;
+    -moz-text-shadow: 0px 0px 4px #1d1d1d;
+    text-shadow: 0px 0px 4px #1d1d1d;
+}
+
+.ship-tex {
+    font-size: 4rem;
+
+    color: #dfdfdf;
+    -webkit-text-shadow: 0px 0px 4px #1d1d1d;
+    -moz-text-shadow: 0px 0px 4px #1d1d1d;
+    text-shadow: 0px 0px 4px #1d1d1d;
 }
